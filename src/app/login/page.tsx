@@ -77,7 +77,7 @@ export default function Login() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Votre email ou nom d&aposutilisateur"
+              placeholder="Votre email ou nom d&apos;utilisateur"
               required
               className="w-full px-4 py-3 text-black border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B4D8] placeholder-gray-400"
             />

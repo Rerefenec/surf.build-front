@@ -105,7 +105,7 @@ return (
             className="block mb-2 font-medium text-[#2D3A40]"
             htmlFor="email"
           >
-            Email ou nom d&aposutilisateur
+            Email ou nom d&apos;utilisateur
           </label>
           <div className="relative">
             <input

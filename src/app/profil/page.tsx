@@ -99,7 +99,8 @@ export default function ProfilePage() {
   useEffect(() => {
     const fetchFavorites = async () => {
       try {
-        const res = await fetch("http://localhost:3002/api/favorites");
+        const API_URL = process.env.NEXT_PUBLIC_API_URL
+        const res = await fetch(`${API_URL}/favorites`);
         if (res.ok) {
           const data = await res.json();
           setFavorites(data);
@@ -192,7 +193,7 @@ export default function ProfilePage() {
               <div className="flex items-center gap-4">
                 <User size={16} className="text-gray-600 flex-shrink-0" />
                 <div className="flex-1 min-w-0 flex flex-col sm:flex-row justify-between sm:items-center">
-                  <p className="text-sm font-medium text-gray-500">Nom d&aposutilisateur</p>
+                  <p className="text-sm font-medium text-gray-500">Nom d&apos;utilisateur</p>
                   {isEditing ? (
                     <input
                       type="text"
