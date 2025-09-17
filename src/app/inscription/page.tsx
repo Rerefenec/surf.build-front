@@ -51,10 +51,10 @@ export default function CreateLog() {
 
     setLoading(true);
     try {
-      const baseUrl = `${window.location.protocol}//${window.location.hostname}:3002`;
+     const API_URL = process.env.NEXT_PUBLIC_API_URL
       
       const response = await fetch(
-        `${baseUrl}/signup`,
+        `${API_URL}/signup`,
         {
           method: "POST",
           headers: {

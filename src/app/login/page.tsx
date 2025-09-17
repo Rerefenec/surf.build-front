@@ -20,10 +20,10 @@ export default function Login() {
 
     try {
       // Appel à ton API backend pour vérifier l'email + password
-       const baseUrl = `${window.location.protocol}//${window.location.hostname}:3002`;
+      const API_URL = process.env.NEXT_PUBLIC_API_URL
       
       const response = await fetch(
-        `${baseUrl}/login`,
+        `${API_URL}/login`,
         {
           method: "POST",
           headers: {

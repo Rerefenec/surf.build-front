@@ -41,10 +41,9 @@ useEffect(() => {
     }
 
     try {
-      const baseUrl = `${window.location.protocol}//${window.location.hostname}:3002`;
-      
-      // CORRECTION : Utiliser /profile au lieu de /latest-user
-      const response = await fetch(`${baseUrl}/profile`, {
+    
+      const API_URL = process.env.NEXT_PUBLIC_API_URL;      // CORRECTION : Utiliser /profile au lieu de /latest-user
+      const response = await fetch(`${API_URL}/profile`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'

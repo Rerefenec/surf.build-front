@@ -46,8 +46,8 @@ export default function ProfilePage() {
         return;
       }
       try {
-        const baseUrl = `${window.location.protocol}//${window.location.hostname}:3002`;
-        const response = await fetch(`${baseUrl}/profile`, {
+       const API_URL = process.env.NEXT_PUBLIC_API_URL
+        const response = await fetch(`${API_URL}/profile`, {
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
@@ -75,8 +75,8 @@ export default function ProfilePage() {
       }
 
       try {
-        const baseUrl = `${window.location.protocol}//${window.location.hostname}:3002`;
-        const response = await fetch(`${baseUrl}/profile`, {
+       const API_URL = process.env.NEXT_PUBLIC_API_URL
+        const response = await fetch(`${API_URL}/profile`, {
           headers: {
             Authorization: `Bearer ${token}`,
             "Content-Type": "application/json",

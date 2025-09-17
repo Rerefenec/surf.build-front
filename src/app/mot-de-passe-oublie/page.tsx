@@ -55,9 +55,9 @@ export default function ForgottenPassword() {
   setLoading(true);
 
   try {
-    const baseUrl = `${window.location.protocol}//${window.location.hostname}:3002`;
+   const API_URL = process.env.NEXT_PUBLIC_API_URL
     
-    const response = await fetch(`${baseUrl}/change-password`, {
+    const response = await fetch(`${API_URL}/change-password`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, newPassword: password }),

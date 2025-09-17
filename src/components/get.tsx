@@ -21,10 +21,10 @@ export default function Get() {
     const fetchData = async () => {
       try {
         setLoading(true);
-        //ici j'ai changé le localhost par window.location pour que ça marche sur les mobiles. la const baseUrl permet de récupérer le protocole et le nom d'hôte actuels, puis d'ajouter le port 3002.
+        //ici j'ai changé le localhost par window.location pour que ça marche sur les mobiles. la const API_URL permet de récupérer le protocole et le nom d'hôte actuels, puis d'ajouter le port 3002.
         // windows.location.protocol pour le protocole (http: ou https:)  // window.location.hostname pour le nom d'hôte (localhost ou l'IP) exemple: http://localhost:3002 ou http://192.168.1.1:3002
-       const baseUrl = `${window.location.protocol}//${window.location.hostname}:3002`;
-       const res = await fetch(`${baseUrl}/dog`);
+      const API_URL = process.env.NEXT_PUBLIC_API_URL
+       const res = await fetch(`${API_URL}/dog`);
 
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);

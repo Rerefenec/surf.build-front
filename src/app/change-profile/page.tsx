@@ -20,8 +20,8 @@ useEffect(() => {
   async function fetchProfile() {
     const token = localStorage.getItem("accessToken");
     if (!token) return;
-    const baseUrl = `${window.location.protocol}//${window.location.hostname}:3002`;
-    const response = await fetch(`${baseUrl}/profile`, {
+   const API_URL = process.env.NEXT_PUBLIC_API_URL
+    const response = await fetch(`${API_URL}/profile`, {
       headers: {
         'Authorization': `Bearer ${token}`,
         'Content-Type': 'application/json'
@@ -50,10 +50,10 @@ useEffect(() => {
 
     setLoading(true);
     try {
-      const baseUrl = `${window.location.protocol}//${window.location.hostname}:3002`;
+     const API_URL = process.env.NEXT_PUBLIC_API_URL
       const token = localStorage.getItem("accessToken");
       const response = await fetch(
-        `${baseUrl}/change-profile`,
+        `${API_URL}/change-profile`,
         {
           method: "POST",
           headers: {
